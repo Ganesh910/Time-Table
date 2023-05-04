@@ -4,13 +4,16 @@ function rotate(){
 
     if(!isMoved){
         console.log("Clockwise Move");
+        btn.style.left='40%';
         btn.style.transform = 'rotate(45deg)';
-        btn.style.left='80%';
-        btn.setAttribute('data-moved', 'true')
+        btn.style.background='#7E57C2';
+        btn.setAttribute('data-moved', 'true');
     }
     else{
         console.log("Anticlockwise move");
+        btn.style.left='5%';
         btn.style.transform = 'rotate(-45deg)';
-        btn.setAttribute('data-moved', 'false')
+        btn.style.background='#EF5350';
+        btn.setAttribute('data-moved', 'false');
     }
 }
