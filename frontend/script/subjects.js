@@ -1,19 +1,33 @@
-function rotate(){
+function rotate() {
     const btn = document.getElementById('rotate-btn');
-    const isMoved = btn.getAttribute('data-moved')=='true';
+    const btn_div = document.getElementById('add_div');
+    const isMoved = btn.getAttribute('data-moved') == 'true';
+    const textBox = document.createElement('input');
+    textBox.setAttribute("type", "text");
+    textBox.setAttribute("name", "new_sub");
+    textBox.setAttribute("class", "inputBox");
+    textBox.setAttribute("id", "new_sub");
 
-    if(!isMoved){
+    if (!isMoved) {
         console.log("Clockwise Move");
-        btn.style.left='40%';
+        btn.style.left = '81%';
         btn.style.transform = 'rotate(45deg)';
-        btn.style.background='#7E57C2';
+        btn.style.background = '#7E57C2';
         btn.setAttribute('data-moved', 'true');
-    }
-    else{
+        btn_div.insertBefore(textBox, btn_div.firstChild);
+        setTimeout(() => {
+            textBox.classList.add('visible');
+        }, 350);
+    } else {
         console.log("Anticlockwise move");
-        btn.style.left='5%';
-        btn.style.transform = 'rotate(-45deg)';
-        btn.style.background='#EF5350';
+        btn.style.left = '5%';
+        btn.style.transform = 'rotate(0deg)';
+        btn.style.background = '#EF5350';
         btn.setAttribute('data-moved', 'false');
+        const inputBox = document.getElementById('new_sub');
+        inputBox.classList.remove('visible');
+        setTimeout(() => {
+            inputBox.parentNode.removeChild(inputBox);
+        }, 1000);
     }
 }

@@ -5,7 +5,6 @@
 }
 
 .round-button {
-    position: absolute;
     border-radius: 100px;
     background-color: #EF5350;
     padding: 10px;
@@ -17,9 +16,35 @@
     border: none;
     outline: none;
     cursor: pointer;
-    transition: transform 1s, left 1s, background-color 1.5s;
+}
+
+.move-button {
+    position: absolute;
+    transition: transform 1s, left 1.25s, background-color 1.5s;
 }
 
 .add_div {
+    position: relative;
     padding: 15px;
+    align-items: center;
+    width: 50%;
+}
+
+.inputBox {
+    border-radius: 40px;
+    height: 50px;
+    width: 75%;
+    border: none;
+    background-color: #E1BEE7;
+    color: white;
+    outline: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: medium;
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+.inputBox.visible {
+    opacity: 1;
 }
